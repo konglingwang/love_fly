@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_binding_state_info"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="Unknown"
+        android:textColor="@color/colorBlack"
+        android:textSize="17sp" />
+
+
+    <TextView
+        android:id="@+id/tv_activation_state_info"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:layout_alignRight="@+id/tv_binding_state_info"
+        android:layout_below="@+id/tv_binding_state_info"
+        android:text="Unknown"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="17sp" />
+
+    <Button
+        android:layout_below="@+id/tv_activation_state_info"
+        android:id="@+id/btn_login"
+        android:layout_alignLeft="@+id/tv_activation_state_info"
+        style="@style/common_button"
+        android:layout_gravity="center_horizontal"
+        android:text="Login" />
+
+    <Button
+        android:layout_below="@+id/tv_activation_state_info"
+        android:layout_toRightOf="@+id/btn_login"
+        android:id="@+id/btn_logout"
+        android:layout_alignRight="@+id/tv_activation_state_info"
+        style="@style/common_button"
+        android:layout_gravity="center_horizontal"
+        android:text="Logout" />
+
+    <GridLayout
+        android:id="@+id/VD"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_below="@+id/btn_logout"
+        android:columnCount="4"
+        android:rowCount="4">
+
+        <Button
+            android:id="@+id/takeoff"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="takeoff" />
+
+        <Button
+            android:id="@+id/land"
+            android:layout_columnSpan="2"
+
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="land" />
+
+        <Button
+            android:id="@+id/up"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="upto10m" />
+        <Button
+            android:id="@+id/turn_left"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="turn_left" />
+
+        <Button
+            android:id="@+id/turn_right"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="turn_right" />
+
+        <Button
+            android:id="@+id/forward"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="forward" />
+
+        <Button
+            android:id="@+id/backward"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="backward" />
+
+        <Button
+            android:id="@+id/hotpoint"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hotpoint" />
+
+        <Button
+            android:id="@+id/takephoto"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="takephoto" />
+
+
+        <Button
+            android:id="@+id/followstart"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="followstart" />
+
+        <Button
+            android:id="@+id/followend"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="followend" />
+
+        <Button
+            android:id="@+id/enableVD"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="enableVD" />
+
+        <Button
+            android:layout_columnSpan="2"
+            android:id="@+id/disableVD"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="disableVD" />
+
+        <Button
+            android:id="@+id/closegirl"
+            style="@style/common_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="closegirl" />
+
+
+
+    </GridLayout>
+    <RelativeLayout
+        android:layout_below="@+id/VD"
+
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextureView
+            android:id="@+id/video_previewer_surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/linearLayout" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/linearLayout">
+            <Button
+                android:id="@+id/btn_capture"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:text="Capture"
+                android:textSize="12sp"/>
+
+            <ToggleButton
+                android:id="@+id/btn_record"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Start Record"
+                android:textOff="Start Record"
+                android:textOn="Stop Record"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:textSize="12dp"
+                android:checked="false" />
+
+            <Button
+                android:id="@+id/btn_shoot_photo_mode"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Shoot Photo Mode"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/btn_record_video_mode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Record Video Mode"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="150dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="23dp"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignTop="@+id/video_previewer_surface"
+            android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
+
+</RelativeLayout>
